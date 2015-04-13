@@ -1,0 +1,41 @@
+-- Aufgabe 1: von Datensammlung zu Liste ----
+Eine Auflistung von Objekten in eine ArrayListe übernehmen und nach Nr. sortieren.
+Wie würde man vorgehen, um Dublikate innerhalb der Liste zu entfernen?
+=> Comparable-Interface verwenden, equals() und hashCode() überschreiben.
+
+-- Aufgabe2: Unterschied TreeSet / HashSet? ------------
+Was ist der Unterschied zwischen TreeSet und HashSet? 
+Was muss bei den Objekten eines HashSets gegeben sein?
+Warum kann man nicht einfach Set<Minion>= new Set<>(); verwenden?
+
+-- Aufgabe3: Von Liste zu Ordnung -----------------------
+Datensätze der Liste in ein TreeSet übertragen. Erklären, was mit den Duplikaten passiert.
+Entgültige Liste in eine .txt-Datei schreiben und Größe der Liste ausgeben.
+
+=> toString() überschreiben für Ausgabe.
+=> Verstehen, dass ein Set keine Duplikate erlaubt und sie daher selbstständig entfernt.
+
+
+
+
+
+
+
+
+
+
+
+
+-- Aufgabe 4 (optional) ----
+hashCode()-Methode der Klasse ist schon vorhanden => immutable machen.
+In der Klasse MinionMap das Interface "Map" implementieren, unter Verwendung der Methoden einer hashMap.
+Zwei weitere Methoden implementieren: int countBananenbedarf() und intcountApfelbedarf().
+Daten in die MinionMap übertragen und auswerten, wie viele Bananen und Äpfel gebraucht werden.
+
+-- Aufgabe 5 (optional) ----
+Performance-Vergleich für Suche mit jeweils (wie viele?) selbst generierten Datensätzen?
+
+
+
+-- Test für die Tutoren:  
+UnitTest: Ergebnisse vergleichen => Es muss das gleiche rauskommen (als JUnit-Test ausführen)
