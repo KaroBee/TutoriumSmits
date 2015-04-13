@@ -1,4 +1,4 @@
-package TPE_Loesung;
+package loesung;
 
 import java.io.File;
 import java.io.FileWriter;

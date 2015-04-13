@@ -1,4 +1,4 @@
-package TPE_Original;
+package vorgabe;
 
 public class Minion {
 

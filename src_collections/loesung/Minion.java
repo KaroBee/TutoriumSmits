@@ -1,3 +1,4 @@
+package loesung;
 
 public final class Minion implements Comparable<Minion>{
 
@@ -7,19 +8,10 @@ public final class Minion implements Comparable<Minion>{
 	private boolean magApfel;
 	
 	/**
-	 * Leerer Konstruktor, ruft Parameter-Konstruktor mit Default-Werten auf
-	 */
-	public Minion(){
-		this(0, "gelb", true, false);
-	}
-	
-	/**
-	 * 
 	 * @param evilNumber: fortlaufende Inventar-Nummer
 	 * @param farbe: Entweder "gelb" oder "violett". Bei anderen Eingaben wird als Default "gelb" gesetzt.
-	 * @param magApfel: Ist bei violetten Minions default false. Ansonsten das, was angegeben ist.
 	 */
-	public Minion (int evilNumber, String farbe, boolean magBanane, boolean magApfel){
+	public Minion (int evilNumber, String farbe){
 		this.evilNumber = evilNumber;
 		
 		//farbe muss "gelb" oder "violett" sein
@@ -32,32 +24,36 @@ public final class Minion implements Comparable<Minion>{
 		//wenn das Minion violett ist, isst es kein Obst
 		if (this.farbe=="violett"){
 			this.magBanane = false;
-			this.magApfel = false;
 		}else{
-			//wenn ein Minion gelb ist, muss es mindestens die Bananen mögen
-			this.magApfel = magApfel;
-			if (this.farbe=="gelb"){
-				this.magBanane = true;
-			}
+			this.magBanane = true;
 		}
 	}
 	
+	
+	/**
+	 * @return int: Inventar-Nummer des Minions.
+	 */
 	public int getEvilNumber() {
 		return evilNumber;
 	}
 
+	/**
+	 * @return String: Farbe des Minions.
+	 */
 	public String getFarbe() {
 		return farbe;
 	}
 
-	public boolean isMagBanane() {
+	/**
+	 * @return boolean: ob ein Minion Bananen mag, oder nicht.
+	 */
+	public boolean magBanane() {
 		return magBanane;
 	}
 
-	public boolean isMagApfel() {
-		return magApfel;
-	}
-	
+	/**
+	 * <Kommentar>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null)
@@ -76,27 +72,44 @@ public final class Minion implements Comparable<Minion>{
 		return true;
 	}
 
+	/**
+	 * <Kommentar>
+	 */
+	@Override
+	public int hashCode() {
+		int result = 1;
+		result += (""+evilNumber+"").hashCode();
+		result += farbe.hashCode();
+		result += (magBanane ? "true" : "false").hashCode();
+		return result;
+	}
+
+	/**
+	 * <Kommentar>
+	 */
 	@Override
 	public String toString() {
-		String magB = "mag Banane";
-		String magA = "mag Apfel";
-		
+	
+		String magB;
 		if (!magBanane){
 			magB = "mag keine Bananen";
-		}
+		}else{
+			magB = "mag Banane";	
+		}		
 		
-		if (!this.magApfel){
-			magA = "mag keine Äpfel";
-		}
-		
-		String farbeText = farbe;
+		String farbeText;
 		if (farbe == "violett"){
 			farbeText = "violett und böse";
+		}else{
+			farbeText = "gelb";
 		}
 		
-		return "Minion [ Nr." + evilNumber + ", "+farbeText+", "+magB+", "+magA+" ]";
+		return "Minion [ Nr." + evilNumber + ", "+farbeText+", "+magB+" ]";
 	}
 	
+	/**
+	 * <Kommentar>
+	 */
 	public int compareTo(Minion o){
 		if (o.evilNumber == evilNumber){
 			return 0;

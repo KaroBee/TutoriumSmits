@@ -1,4 +1,4 @@
-package TPE_Original;
+package vorgabe;
 
 public class EvilPlan {
 
@@ -209,7 +209,6 @@ public class EvilPlan {
 		new Minion(75,"violett");
 		new Minion(45,"gelb");
 		
-
 	}
 	
 }
