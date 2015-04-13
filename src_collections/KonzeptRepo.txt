@@ -14,28 +14,3 @@ Entgültige Liste in eine .txt-Datei schreiben und Größe der Liste ausgeben.
 
 => toString() überschreiben für Ausgabe.
 => Verstehen, dass ein Set keine Duplikate erlaubt und sie daher selbstständig entfernt.
-
-
-
-
-
-
-
-
-
-
-
-
--- Aufgabe 4 (optional) ----
-hashCode()-Methode der Klasse ist schon vorhanden => immutable machen.
-In der Klasse MinionMap das Interface "Map" implementieren, unter Verwendung der Methoden einer hashMap.
-Zwei weitere Methoden implementieren: int countBananenbedarf() und intcountApfelbedarf().
-Daten in die MinionMap übertragen und auswerten, wie viele Bananen und Äpfel gebraucht werden.
-
--- Aufgabe 5 (optional) ----
-Performance-Vergleich für Suche mit jeweils (wie viele?) selbst generierten Datensätzen?
-
-
-
--- Test für die Tutoren:  
-UnitTest: Ergebnisse vergleichen => Es muss das gleiche rauskommen (als JUnit-Test ausführen)
