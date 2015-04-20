@@ -5,7 +5,6 @@ public final class Minion implements Comparable<Minion>{
 	private int evilNumber;
 	private String farbe;
 	private boolean magBanane;
-	private boolean magApfel;
 	
 	/**
 	 * @param evilNumber: fortlaufende Inventar-Nummer
@@ -64,8 +63,6 @@ public final class Minion implements Comparable<Minion>{
 		if (evilNumber != other.evilNumber)
 			return false;
 		if (!farbe.equals(other.farbe))
-			return false;
-		if (magApfel != other.magApfel)
 			return false;
 		if (magBanane != other.magBanane)
 			return false;
