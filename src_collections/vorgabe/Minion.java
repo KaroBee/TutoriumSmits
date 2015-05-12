@@ -8,7 +8,9 @@ public class Minion {
 	public int evilNumber;
 	
 	/**
-	 * "gelb" oder "violett". Alles andere ist falsch.
+	 * "gelb" oder "violett". Alles andere ist falsch. 
+	 * Wenn es nicht gelb ist und nicht violett, 
+	 * wird es trotzdem als gelb gezählt, um sicher zu gehen.
 	 */
 	public String farbe;
 	

@@ -9,16 +9,18 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class EvilPlan {
-	
+
 	public static void main(String[] args) {
 
 		// Mein teuflischer Plan, die Minions zu zählen, hat begonnen ---- muHAHAHAH!
+		
+		//Aufgabe 2
 		ArrayList<Minion> liste = (ArrayList<Minion>) erstelleListe();
 		
-		//mit TreeSet: Comparable-Interface/ compareTo implementieren
+		//Aufgabe 4
 		Set<Minion> treeSet = new TreeSet<>();
 		for (Minion minion : liste) {
-			if (minion.getFarbe() == "gelb"){
+			if (minion.getFarbe() == MinionType.GELB){
 				treeSet.add(minion);
 			}
 		}
@@ -26,11 +28,8 @@ public class EvilPlan {
 		//AUSGABEN: toString() überschreiben + die Funktionalität in Methode auslagern
 		schreibenInDatei(treeSet, "TreeSet.txt");
 		
-		//Kleiner Konsolen-Check, ob das Programm durchgelaufen ist.
-		System.out.println("fertig"); 
 	}
 
-	
 	/**
 	 * Nimmt die uebergebene Liste und schreibt sie in die angegebene Datei.
 	 * Try/Catch geben einen Konsolenhinweis, 
@@ -60,217 +59,219 @@ public class EvilPlan {
 		  } catch (IOException e) {
 				System.out.println("Hat nicht funktioniert: "+dateiname);
 		  }
+		  
+		  System.out.println("Anzahl von Bananen:"+liste.size());
+		  
 	}
 
-	/**
-	 * Das war anstrengend - die halten einfach nicht still!!!
-	 * @return Liste unserer Minions
-	 */
-	public static Collection<Minion> erstelleListe() {
-
+	private static ArrayList<Minion> erstelleListe() {
 		ArrayList<Minion> list = new ArrayList<>();
-		list.add(new Minion(34,"violett"));
-		list.add(new Minion(41,"violett"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(37,"violett"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(65,"violett"));
-		list.add(new Minion(14,"violett"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(24,"violett"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(75,"violett"));
-		list.add(new Minion(87,"gelb"));
-		list.add(new Minion(58,"violett"));
-		list.add(new Minion(81,"violett"));
-		list.add(new Minion(85,"gelb"));
-		list.add(new Minion(71,"violett"));
-		list.add(new Minion(97,"violett"));
-		list.add(new Minion(100,"violett"));
-		list.add(new Minion(63,"violett"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(37,"violett"));
-		list.add(new Minion(16,"violett"));
-		list.add(new Minion(30,"violett"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(1,"gelb"));
-		list.add(new Minion(50,"violett"));
-		list.add(new Minion(72,"gelb"));
-		list.add(new Minion(67,"violett"));
-		list.add(new Minion(4,"gelb"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(93,"gelb"));
-		list.add(new Minion(56,"violett"));
-		list.add(new Minion(39,"gelb"));
-		list.add(new Minion(85,"gelb"));
-		list.add(new Minion(35,"violett"));
-		list.add(new Minion(48,"gelb"));
-		list.add(new Minion(78,"gelb"));
-		list.add(new Minion(34,"violett"));
-		list.add(new Minion(37,"violett"));
-		list.add(new Minion(65,"violett"));
-		list.add(new Minion(81,"violett"));
-		list.add(new Minion(89,"gelb"));
-		list.add(new Minion(99,"gelb"));
-		list.add(new Minion(62,"gelb"));
-		list.add(new Minion(22,"violett"));
-		list.add(new Minion(4,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(7,"violett"));
-		list.add(new Minion(59,"violett"));
-		list.add(new Minion(88,"gelb"));
-		list.add(new Minion(91,"violett"));
-		list.add(new Minion(29,"violett"));
-		list.add(new Minion(14,"violett"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(43,"gelb"));
-		list.add(new Minion(19,"gelb"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(3,"violett"));
-		list.add(new Minion(34,"violett"));
-		list.add(new Minion(24,"violett"));
-		list.add(new Minion(10,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(53,"violett"));
-		list.add(new Minion(76,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(75,"violett"));
-		list.add(new Minion(13,"gelb"));
-		list.add(new Minion(46,"violett"));
-		list.add(new Minion(80,"gelb"));
-		list.add(new Minion(47,"gelb"));
-		list.add(new Minion(86,"gelb"));
-		list.add(new Minion(92,"gelb"));
-		list.add(new Minion(21,"gelb"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(87,"gelb"));
-		list.add(new Minion(58,"violett"));
-		list.add(new Minion(50,"violett"));
-		list.add(new Minion(72,"gelb"));
-		list.add(new Minion(81,"violett"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(20,"violett"));
-		list.add(new Minion(5,"gelb"));
-		list.add(new Minion(44,"violett"));
-		list.add(new Minion(70,"violett"));
-		list.add(new Minion(61,"violett"));
-		list.add(new Minion(11,"gelb"));
-		list.add(new Minion(37,"violett"));
-		list.add(new Minion(66,"gelb"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(95,"gelb"));
-		list.add(new Minion(0,"gelb"));
-		list.add(new Minion(40,"gelb"));
-		list.add(new Minion(60,"gelb"));
-		list.add(new Minion(13,"gelb"));
-		list.add(new Minion(68,"gelb"));
-		list.add(new Minion(96,"violett"));
-		list.add(new Minion(76,"gelb"));
-		list.add(new Minion(13,"gelb"));
-		list.add(new Minion(46,"violett"));
-		list.add(new Minion(26,"gelb"));
-		list.add(new Minion(49,"gelb"));
-		list.add(new Minion(17,"gelb"));
-		list.add(new Minion(33,"gelb"));
-		list.add(new Minion(54,"violett"));
-		list.add(new Minion(34,"violett"));
-		list.add(new Minion(41,"violett"));
-		list.add(new Minion(43,"gelb"));
-		list.add(new Minion(19,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(3,"violett"));
-		list.add(new Minion(34,"violett"));
-		list.add(new Minion(1,"gelb"));
-		list.add(new Minion(50,"violett"));
-		list.add(new Minion(72,"gelb"));
-		list.add(new Minion(82,"violett"));
-		list.add(new Minion(98,"gelb"));
-		list.add(new Minion(27,"violett"));
-		list.add(new Minion(81,"violett"));
-		list.add(new Minion(42,"gelb"));
-		list.add(new Minion(9,"violett"));
-		list.add(new Minion(73,"violett"));
-		list.add(new Minion(4,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(75,"violett"));
-		list.add(new Minion(13,"gelb"));
-		list.add(new Minion(31,"gelb"));
-		list.add(new Minion(81,"violett"));
-		list.add(new Minion(6,"gelb"));
-		list.add(new Minion(23,"violett"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(8,"violett"));
-		list.add(new Minion(14,"violett"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(24,"violett"));
-		list.add(new Minion(94,"violett"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(1,"gelb"));
-		list.add(new Minion(50,"violett"));
-		list.add(new Minion(72,"gelb"));
-		list.add(new Minion(75,"violett"));
-		list.add(new Minion(43,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(19,"gelb"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(3,"violett"));
-		list.add(new Minion(41,"violett"));
-		list.add(new Minion(69,"violett"));
-		list.add(new Minion(83,"violett"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(87,"gelb"));
-		list.add(new Minion(58,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(57,"violett"));
-		list.add(new Minion(25,"violett"));
-		list.add(new Minion(18,"violett"));
-		list.add(new Minion(76,"gelb"));
-		list.add(new Minion(13,"gelb"));
-		list.add(new Minion(46,"violett"));
-		list.add(new Minion(15,"violett"));
-		list.add(new Minion(84,"gelb"));
-		list.add(new Minion(4,"gelb"));
-		list.add(new Minion(90,"gelb"));
-		list.add(new Minion(55,"gelb"));
-		list.add(new Minion(36,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(2,"gelb"));
-		list.add(new Minion(45,"gelb"));
-		list.add(new Minion(79,"violett"));
-		list.add(new Minion(38,"violett"));
-		list.add(new Minion(28,"violett"));
-		list.add(new Minion(12,"violett"));
-		list.add(new Minion(52,"violett"));
-		list.add(new Minion(75,"violett"));
+		
+		list.add(MinionFactory.zaehleMinion(34,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(41,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(37,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(65,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(14,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(24,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(75,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(87,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(58,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(81,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(85,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(71,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(97,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(100,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(63,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(37,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(16,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(30,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(1,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(50,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(72,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(67,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(4,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(93,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(56,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(39,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(85,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(35,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(48,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(78,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(34,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(37,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(65,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(81,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(89,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(99,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(62,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(22,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(4,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(7,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(59,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(88,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(91,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(29,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(14,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(43,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(19,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(3,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(34,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(24,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(10,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(53,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(76,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(75,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(13,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(46,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(80,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(47,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(86,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(92,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(21,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(87,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(58,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(50,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(72,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(81,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(20,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(5,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(44,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(70,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(61,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(11,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(37,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(66,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(95,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(0,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(40,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(60,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(13,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(68,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(96,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(76,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(13,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(46,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(26,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(49,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(17,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(33,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(54,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(34,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(41,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(43,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(19,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(3,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(34,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(1,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(50,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(72,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(82,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(98,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(27,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(81,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(42,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(9,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(73,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(4,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(75,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(13,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(31,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(81,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(6,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(23,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(8,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(14,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(24,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(94,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(1,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(50,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(72,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(75,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(43,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(19,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(3,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(41,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(69,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(83,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(87,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(58,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(57,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(25,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(18,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(76,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(13,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(46,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(15,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(84,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(4,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(90,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(55,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(36,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(2,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
+		list.add(MinionFactory.zaehleMinion(79,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(38,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(28,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(12,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(52,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(75,MinionType.VIOLETT));
+		list.add(MinionFactory.zaehleMinion(45,MinionType.GELB));
 		
 		return list;
 	}
-
+	
 }
